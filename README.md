@@ -41,7 +41,32 @@ In for this workshop you are expected to be:
 * A provisioning `bash` script for Ubuntu 18.04 that sets up all required tools.
 * Demo programs to use in your exploration.
 
+## Topics to be covered:
 
-
-
+* What is Chaos Engineering?
+  * What are the principles?
+  * What kinds of failure should happen?
+  * What does it help catch?
+  * What does it not catch?
+  * Where can I learn more?
+* Operations Preparation
+  * Knowing your infrastructure.
+  * Service health checks and recovery with systemd.
+  * Monitoring and log collection.
+  * Generating simulated load.
+* Basics of `kill`.
+  * Manual chaos.
+* Simulating a shoddy network with `ip link`.
+  * Shakey latency, packet loss, and reordering.
+* Injecting system faults with `systemtap`.
+  * What can be injected.
+  * Scripting methods
+* Using fuzzy scheduling with `nmz`.
+  * What it does.
+  * How to use.
+* Application level failure injection.
+  * Example with `fail-rs`.
+* Chaos in your CI/CD.
+  * Avoiding unrelated failures in PRs.
+  * Small Schrodinger Demo.
 
