@@ -21,4 +21,5 @@
 * [Failure as a Feature](failure-as-a-feature.md)
 * [Continous Chaos \(CI/CD\)](continous-chaos-ci-cd/README.md)
   * [Example: Schrödinger](continous-chaos-ci-cd/example-schroedinger.md)
+* [More Resources / References](more-resources-references.md)
 

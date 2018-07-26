@@ -6,9 +6,13 @@ description: Spawning a kit node on DigitalOcean.
 
 If you haven't already head on over to [DigitalOcean](http://digitalocean.com/) and [Sign Up \(referral\)](https://m.do.co/c/b6156cf29450), then get a [Read/Write API token](https://cloud.digitalocean.com/account/api/tokens/new). Then, create a file in the working directory called `terraform.tfvars`:
 
-```lua
+{% code-tabs %}
+{% code-tabs-item title="terraform.tfvars" %}
+```bash
 digitalocean_token = "your token here"
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Additionally, ensure you have an SSH key set up.
 
