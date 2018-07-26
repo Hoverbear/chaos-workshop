@@ -24,7 +24,7 @@ This workshop is targeted towards people who want to:
 
 ## What do I need to know?
 
-In for this workshop you are expected to be:
+In order to get the most from this workshop you should be:
 
 * Comfortable navigating a machine via console.
 * Able to understand and work with simple `bash` scripts.
@@ -32,6 +32,8 @@ In for this workshop you are expected to be:
 * Familiar with some supervisor. \(We'll use `systemd`\)
 * Able to write code in some language. \(We'll be using some simple Rust for our demos\)
 * Not afraid to kill processes.
+
+Not any of these things? **You can still try,** but you will need to access significant supplementary materials.
 
 ## What's Inside?
 
