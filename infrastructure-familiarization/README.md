@@ -7,9 +7,19 @@ description: >-
 
 # Infrastructure Familiarization
 
-It is critically important before introducing chaos into a system that you actually understand the system. You are unlikely to develop any new knowledge from just blindly introducing failures.
+## Setting a Baseline
 
-So, take some time to understand your "Thread Model."
+Before we start introducing chaos let's take a bit of time to ensure we are meeting a baseline of:
+
+* Service failures can be detected.
+* Failed services should restart automatically.
+* Logs are collected. \(preferably we can collect all debug logs as well\)
+* Metrics are collected.
+* There is some way to view system wide logs and metrics. \(Eg Kibana/Grafana\)
+
+If you're already doing these things feel free to skip the pages related to them.
+
+## Understanding Your System
 
 Try to collect some information about **each component in the system**:
 
@@ -24,4 +34,6 @@ Additionally, from the perspective of **the entire system**:
 * What is a realistic workload for the system? How can you reproduce this?
 * At what point do you expect the system to fail? \(Eg if you switch off the SQL databases entirely the system should break\)
 * What is the average cluster topology and size of the system? What is the breaking point of this system? \(Eg the majority of nodes of each component is alive\)
+
+## 
 

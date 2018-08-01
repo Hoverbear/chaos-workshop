@@ -6,7 +6,7 @@
   * [Kinds of Failure](a-brief-intoduction-to-chaos/kinds-of-failure.md)
   * [Goals and Non-goals](a-brief-intoduction-to-chaos/goals-and-non-goals.md)
 * [Infrastructure Familiarization](infrastructure-familiarization/README.md)
-  * [Service Recovery](infrastructure-familiarization/service-recovery.md)
+  * [Service Resilience](infrastructure-familiarization/service-recovery.md)
   * [Monitoring and Logging](infrastructure-familiarization/monitoring-and-logging.md)
   * [Generating Work & Data](infrastructure-familiarization/generating-work-and-data.md)
 * [Assembling Your Kit](assembling-your-kit/README.md)
@@ -20,5 +20,5 @@
 * [Failure as a Feature](failure-as-a-feature.md)
 * [Continous Chaos \(CI/CD\)](continous-chaos-ci-cd/README.md)
   * [Example: Schrödinger](continous-chaos-ci-cd/example-schroedinger.md)
-* [More Resources / References](more-resources-references.md)
+* [Resources / References](more-resources-references.md)
 
