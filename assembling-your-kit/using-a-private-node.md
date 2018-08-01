@@ -12,9 +12,10 @@ Spin up a **full Ubuntu Minimal 18.04 VM** using KVM or whatever your infrastruc
 Docker is **not** a valid option here. You **must** use a full VM or real hardware.
 {% endhint %}
 
-Next copy the provisioning script from your local machine \(via `rsync` or cloning this repository again\), shell into the machine, and run it:
+Provisioning is just shelling in, cloning this repository, and running the script:
 
 ```bash
+git clone https://github.com/Hoverbear/chaos-workshop
 chmod +x provision.sh
 ./provision.sh
 ```
