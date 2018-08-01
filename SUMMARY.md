@@ -5,7 +5,6 @@
   * [Principles of Chaos](a-brief-intoduction-to-chaos/principles-of-chaos.md)
   * [Kinds of Failure](a-brief-intoduction-to-chaos/kinds-of-failure.md)
   * [Goals and Non-goals](a-brief-intoduction-to-chaos/goals-and-non-goals.md)
-  * [More Resources](a-brief-intoduction-to-chaos/more-resources.md)
 * [Infrastructure Familiarization](infrastructure-familiarization/README.md)
   * [Service Recovery](infrastructure-familiarization/service-recovery.md)
   * [Monitoring and Logging](infrastructure-familiarization/monitoring-and-logging.md)

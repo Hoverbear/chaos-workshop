@@ -6,5 +6,6 @@ description: >-
 
 # More Resources / References
 
-* [https://principlesofchaos.org/](https://principlesofchaos.org/)
+* Pillars of Chaos: [https://principlesofchaos.org/](https://principlesofchaos.org/)
+* Byzantine Failure: [https://blog.cdemi.io/byzantine-fault-tolerance/](https://blog.cdemi.io/byzantine-fault-tolerance/)
 
