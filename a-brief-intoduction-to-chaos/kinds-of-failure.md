@@ -71,10 +71,12 @@ Byzantine fault tolerance is not relevant to most distributed systems, and intro
 
 ## Data Center
 
-In many distributed systems cross-datacenter deployments are used to help protect against regional failures. This is mostly just the "Big sister" of the above network and disk failures.
+In many distributed systems cross-data center deployments are used to help protect against regional failures. This is mostly just the "Big sister" of the above network and disk failures.
 
 ### Common Failures
 
 * Data center\(s\) loses connectivity \(Eg an undersea fiber is cut\)
 * Data center is lost entirely and a new one needs to be bootstrapped.
+
+
 

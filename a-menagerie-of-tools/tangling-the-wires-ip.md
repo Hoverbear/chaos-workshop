@@ -4,5 +4,5 @@ description: >-
   create kinks in the network.
 ---
 
-# Tangling the Wires \(\`ip\`\)
+# Failing the Network \(\`ip\`\)
 
