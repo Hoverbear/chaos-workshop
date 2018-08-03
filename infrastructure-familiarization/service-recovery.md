@@ -33,7 +33,7 @@ Which setting you choose is dependent on the component you are considering. If a
 You can see the options and how they behave on the table below:
 
 | Restart settings/Exit causes | `no` | `always` | `on-success` | `on-failure` | `on-abnormal` | `on-abort` | `on-watchdog` |
-| --- | --- | --- | --- | --- | --- |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | Clean exit code or signal |   | X | X |   |   |   |   |
 | Unclean exit code |   | X |   | X |   |   |   |
 | Unclean signal |   | X |   | X | X | X |   |

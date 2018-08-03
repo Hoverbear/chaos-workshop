@@ -36,7 +36,7 @@ Using a variety of tools and techniques you can simulate many of the above failu
 
 If any of the failures you introduced disproves your hypothesis it means one of three things:
 
-* Your test isn't correctly representing the failure. \(Check it and try again!\)
+* Your test isn't correctly producting the failure. \(Check it and try again!\)
 * Your hypothesis was not correct. \(Verify your assumptions about the system.\)
 * Your system failed when it shouldn't have. \(You have a bug! Try to build a reproduction case\)
 
@@ -48,13 +48,9 @@ This principles are outlined by the [Principles of Chaos](https://principlesofch
 
 Focus on the measurable output of a system, rather than internal attributes of the system.  Measurements of that output over a short period of time constitute a proxy for the system’s steady state.  The overall system’s throughput, error rates, latency percentiles, etc. could all be metrics of interest representing steady state behavior.  By focusing on systemic behavior patterns during experiments, Chaos verifies that the system does work, rather than trying to validate how it works.
 
-
-
 ### **Vary Real-world Events**
 
 Chaos variables reflect real-world events.  Prioritize events either by potential impact or estimated frequency.  Consider events that correspond to hardware failures like servers dying, software failures like malformed responses, and non-failure events like a spike in traffic or a scaling event.  Any event capable of disrupting steady state is a potential variable in a Chaos experiment.
-
-
 
 ### **Run Experiments in Production**
 

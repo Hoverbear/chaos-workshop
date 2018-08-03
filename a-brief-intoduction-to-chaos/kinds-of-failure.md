@@ -30,6 +30,7 @@ Without a reliable network connection a node can be in the dark about the world.
 * One node becomes isolated from the rest.
 * A partition isolates two \(or more\) distinct node groups.
 * Two particular nodes can no longer communicate.
+* Malformed \(or outright hostile\) requests
 * Increased probability of packet corruption \(forcing re-transmits\)
 * The network becomes intolerably slow at some or all links.
 
@@ -51,27 +52,29 @@ Occasionally power grids \(or supplies\) hiccup or fail. This is different than 
 
 * A machine loses power, and is replaced some time later \(minutes, hours\) after being repaired. \(Try to find the worst cases possible for this, eg in the middle of a 2 phase commit.\)
 * A machine reboots, disappearing and reappearing a minute later.
-* A machine with persistent data reboots, and returns with currupted data.
+* A machine with persistent data reboots, and returns with corrupted data.
 
 ## Byzantine
 
-This kind of failure is generally described as "Trying to get a sufficiently large number of nodes to agree on something while a small number bad actors subvert the system." 
+Byzantine Fault Tolerance is described as the following:
 
-Learn more at [https://blog.cdemi.io/byzantine-fault-tolerance/](https://blog.cdemi.io/byzantine-fault-tolerance/).
+> Trying to get a sufficiently large number of nodes to agree on something while a small number bad actors subvert the system.
+>
+> _Learn more at_ [_https://blog.cdemi.io/byzantine-fault-tolerance/_](https://blog.cdemi.io/byzantine-fault-tolerance/)_._
 
 Byzantine fault tolerance is not relevant to most distributed systems, and introduces a significant amount of system complexity. Notable exceptions being things like Blockchains \(eg [Ethereum](https://www.ethereum.org/)\).
 
 ### Common Failures
 
 * A node starts sending messages it shouldn't be, under the influence of a bad actor.
-* A node is under the wrong impression about the state of the greater system due to some failure or bug, and sends messages it shouldn't. \(Eg "I'm the master replica now, listen to me!"\)
+* A node is under the wrong impression about the state of the greater system due to some bug, and sends messages it shouldn't. \(Eg "I'm the master replica now, listen to me!"\)
 
 ## Data Center
 
-In many distributed systems cross-datacenter deployments are used to help protect againsts regional faillures. This is mostly just the "Big sister" of the above network and disk failures.
+In many distributed systems cross-datacenter deployments are used to help protect against regional failures. This is mostly just the "Big sister" of the above network and disk failures.
 
 ### Common Failures
 
-* Datacenter\(s\) loses connectivity \(Eg an undersea fiber is cut\)
-* Datacenter is lost entirely and a new one needs to be bootstrapped.
+* Data center\(s\) loses connectivity \(Eg an undersea fiber is cut\)
+* Data center is lost entirely and a new one needs to be bootstrapped.
 
