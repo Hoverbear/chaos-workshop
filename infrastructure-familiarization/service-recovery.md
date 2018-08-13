@@ -4,10 +4,10 @@ description: 'How to have services recovery from failure, and detect that they h
 
 # Service Resilience
 
-We're using systemd on our test VMs, and you are most likely using it in your production systems. If you''re using something like runit or sysvinit you will need to go do your own research.
+We're using systemd on our test VMs, and you are most likely using it in your production systems. If you''re using something like `runit` or `sysvinit` you will need to go do your own research.
 
 {% hint style="info" %}
-Pst, if you do that research a PR to add it here would be greatly appreciated!
+Psst, if you do that research a PR to add it here would be greatly appreciated!
 {% endhint %}
 
 ## Automatic Recovery
