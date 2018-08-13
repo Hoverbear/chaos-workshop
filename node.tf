@@ -15,11 +15,11 @@ variable size {
 }
 
 variable name {
-  default = "lab"
+  default = "node"
 }
 
 output ip {
-  value = "${digitalocean_droplet.lab.*.ipv4_address}"
+  value = "${digitalocean_droplet.node.*.ipv4_address}"
 }
 
 resource digitalocean_ssh_key operator {
@@ -27,7 +27,7 @@ resource digitalocean_ssh_key operator {
   public_key = "${file("~/.ssh/id_ed25519.pub")}"
 }
 
-resource digitalocean_droplet lab {
+resource digitalocean_droplet node {
     name               = "${var.count == 1 ? var.name : format("%02d.%s", count.index, var.name)}"
     count              = "${var.count}"
     image              = "ubuntu-18-04-x64"

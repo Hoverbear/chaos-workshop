@@ -1,0 +1,7 @@
+[package]
+name = "fail"
+version = "0.1.0"
+authors = ["Hoverbear <andrew@hoverbear.org>"]
+
+[dependencies]
+fail = "*"
