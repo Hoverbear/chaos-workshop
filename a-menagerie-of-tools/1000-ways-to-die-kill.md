@@ -38,5 +38,10 @@ sleep `shuf -i 1000-10000 -n 1`
 killall -s CONT tikv-server
 ```
 
+## Exercises
+
+* Try sending `STOP` to a running `apache2` server. Do requests still work? Now send `CONT` and test again, does it work again?
+* Open a psql shell \(`sudo -u postgres psql`\), try sending an `HUP` to `postgres` using another shell, does your `psql` shell stop working? What about when you send `KILL`?
+
 
 
