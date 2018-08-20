@@ -16,7 +16,7 @@
   * [1000 Ways to Die \(\`kill\`\)](a-menagerie-of-tools/1000-ways-to-die-kill.md)
   * [Failing the Network \(\`ip\`\)](a-menagerie-of-tools/tangling-the-wires-ip.md)
   * [Controlling Traffic \(\`tc\`\)](a-menagerie-of-tools/controlling-traffic-tc.md)
-  * [Flipping Tables \(\`iptables\`\)](a-menagerie-of-tools/flipping-the-tables-iptables.md)
+  * [Isolating and Parititioning \(\`iptables\`\)](a-menagerie-of-tools/flipping-the-tables-iptables.md)
   * [A Fuzzy Schedule \(\`nmz\`\)](a-menagerie-of-tools/a-fuzzy-schedule-nmz.md)
   * [A Disfunctional Docker \(\`pumba\`\)](a-menagerie-of-tools/a-disfunctional-docker-pumba.md)
 * [Failure as a Feature](failure-as-a-feature.md)
