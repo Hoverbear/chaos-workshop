@@ -43,6 +43,15 @@ apt-get install --yes \
     fish \
     zsh
 
+# Some services to test with.
+apt-get install --yes \
+    apache2 \
+    postgresql
+sudo -u postgres psql <<-SQL
+    ALTER USER postgres PASSWORD 'postgres';
+SQL
+systemctl stop postgresql
+
 # Namazu
 apt-get install --yes \
     git \
@@ -72,4 +81,3 @@ curl -sSf \
     https://sh.rustup.rs \
     | sh -s -- \
     -y
-# TODO: Demo project of fail-rs.

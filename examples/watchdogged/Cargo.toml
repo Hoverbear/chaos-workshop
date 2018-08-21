@@ -1,0 +1,10 @@
+[package]
+name = "watchdogged"
+version = "0.1.0"
+authors = ["Hoverbear <andrew@hoverbear.org>"]
+
+[dependencies]
+libsystemd = "*"
+gotham = "*"
+hyper = "*"
+mime = "*"

@@ -1,0 +1,12 @@
+[Unit]
+Description=Watchdogged
+
+[Service]
+Type=notify
+ExecStart=usr/bin/watchdogged
+Restart=on-failure
+TimeoutStartSec=1s
+WatchdogSec=10s
+StartLimitInterval=5min
+StartLimitBurst=4
+StartLimitAction=stop
