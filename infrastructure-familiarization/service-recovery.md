@@ -57,7 +57,16 @@ By having `WatchdogSec` supported by a service you can have rich self-test logic
 {% code-tabs %}
 {% code-tabs-item title="examples/watchdogged/watchdogged.service" %}
 ```bash
-TODO
+[Unit]
+Description=Watchdogged
+
+[Service]
+ExecStart=/usr/bin/watchdogged
+WatchdogSec=30s
+Restart=on-failure
+StartLimitInterval=5min
+StartLimitBurst=4
+StartLimitAction=reboot-force
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
@@ -65,7 +74,50 @@ TODO
 {% code-tabs %}
 {% code-tabs-item title="examples/watchdogged/src/main.rs" %}
 ```rust
-TODO
+extern crate libsystemd;
+extern crate gotham;
+extern crate hyper;
+extern crate mime;
+
+use libsystemd::daemon::{self, NotifyState};
+use hyper::{Response, StatusCode};
+
+use gotham::{
+    http::response::create_response,
+    state::State,
+};
+use std::{
+    thread,
+    time::Duration,
+};
+
+fn main() {
+    if !daemon::booted() {
+        panic!("Not running systemd, early exit.");
+    };
+    if daemon::watchdog_enabled(false).is_none() {
+        panic!("Not watchdogged.");
+    }
+
+    thread::spawn(|| while let Some(duration) = daemon::watchdog_enabled(false) {
+        thread::sleep(duration - Duration::from_millis(2));
+        daemon::notify(true, &[NotifyState::Watchdog]).unwrap();
+    });
+
+    let addr = "127.0.0.1:7878";
+    println!("Listening for requests at http://{}", addr);
+    gotham::start(addr, || Ok(handle))
+}
+
+pub fn handle(state: State) -> (State, Response) {
+    let res = create_response(
+        &state,
+        StatusCode::Ok,
+        Some((String::from("Hello World!").into_bytes(), mime::TEXT_PLAIN)),
+    );
+
+    (state, res)
+}
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}

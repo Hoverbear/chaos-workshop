@@ -58,6 +58,8 @@ tc qdisc change dev lo root netem duplicate 1%
 tc qdisc change dev lo root netem corrupt 5%
 ```
 
+_Note that TCP has a checksum built in, and corruptions commonly cause a retransmit. Most user level applications do not see this._
+
 ## Exercises
 
 * See how much packet loss you can introduce before a connection between a database and a REPL \(eg `psql`\) starts failing.

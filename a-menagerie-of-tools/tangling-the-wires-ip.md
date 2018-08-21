@@ -11,7 +11,7 @@ The `ip` tool lets you manage network links on your system. It also allows you t
 Typically, your main Ethernet link is `eth0`, along with a loopback on `lo`. If it's not you can use `ip address` to discover which link is of interest to you. On machines with `docker` installed you'll also see a `docker0` link.
 
 {% hint style="danger" %}
-If you're shelled into a machine on a particular link \(like `eth0`\) you should **avoid taking it down.**
+If you're shelled into a machine on a particular link \(like `eth0`\) you should **avoid taking it down or making the MTU too low.**
 {% endhint %}
 
 #### Changing the State of a Link
