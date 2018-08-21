@@ -61,12 +61,14 @@ By having `WatchdogSec` supported by a service you can have rich self-test logic
 Description=Watchdogged
 
 [Service]
-ExecStart=/usr/bin/watchdogged
-WatchdogSec=30s
+Type=notify
+ExecStart=usr/bin/watchdogged
 Restart=on-failure
+TimeoutStartSec=1s
+WatchdogSec=10s
 StartLimitInterval=5min
 StartLimitBurst=4
-StartLimitAction=reboot-force
+StartLimitAction=stop
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
@@ -88,7 +90,6 @@ use gotham::{
 };
 use std::{
     thread,
-    time::Duration,
 };
 
 fn main() {
@@ -98,10 +99,13 @@ fn main() {
     if daemon::watchdog_enabled(false).is_none() {
         panic!("Not watchdogged.");
     }
+    assert_eq!(true, daemon::notify(false, &[NotifyState::Ready]).unwrap());
 
     thread::spawn(|| while let Some(duration) = daemon::watchdog_enabled(false) {
-        thread::sleep(duration - Duration::from_millis(2));
-        daemon::notify(true, &[NotifyState::Watchdog]).unwrap();
+        println!("Watchdog in {:?}, sleeping {:?}...", duration, duration / 2);
+        thread::sleep(duration / 2);
+        println!("Watchdog notified");
+        assert_eq!(true, daemon::notify(false, &[NotifyState::Watchdog]).unwrap());
     });
 
     let addr = "127.0.0.1:7878";
