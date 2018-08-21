@@ -14,10 +14,12 @@ These tools only represent some of the tools available. You may find others, or 
 
 While you can run many of these commands in a manual way, you can also orchestrate running these commands by using an agent installed on your nodes.
 
+### Timers
+
 You could also use things such as systemd timers \(utilizing `RandomizedDelaySec`\) like so:
 
 {% code-tabs %}
-{% code-tabs-item title="kill-postgres.timer" %}
+{% code-tabs-item title="/etc/systemd/system/kill-postgres.timer" %}
 ```bash
 [Unit]
 Description=Kill postgres occasionally.
@@ -34,7 +36,7 @@ WantedBy=timers.target
 {% endcode-tabs %}
 
 {% code-tabs %}
-{% code-tabs-item title="kill-postgres.service" %}
+{% code-tabs-item title="/etc/systemd/system/kill-postgres.service" %}
 ```bash
 [Unit]
 Description=Kill postgres.
@@ -45,5 +47,19 @@ ExecStart=/usr/bin/killall -s KILL postgres
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
+### Socket Activation
 
+You can alternatively trigger failures via systemd's socket activation feature:
+
+{% code-tabs %}
+{% code-tabs-item title="/etc/systemd/system/kill-postgres.socket" %}
+```bash
+/etc/sys[Socket]
+ListenStream = 127.0.0.1:8000
+
+[Install]
+WantedBy = sockets.target
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
