@@ -5,7 +5,7 @@ description: A field guide.
 # Surviving Chaos
 
 {% hint style="info" %}
-Psst! This guide is still in progress, and is not representative of the final product.
+Psst! This guide is still in progress, you're welcome to help with improvements, or just enjoy!
 {% endhint %}
 
 This repository contains the guide and content for the "Surviving Chaos: A Field Guide" workshop hosted at Linux Foundation Open Source Summit 2018 in Vancouver, BC, Canada on August 29-31, 2018.
