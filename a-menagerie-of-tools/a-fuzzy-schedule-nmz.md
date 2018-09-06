@@ -20,7 +20,7 @@ Inside you can run, for example, async networking stack test suite:
 
 ```bash
 apt update && apt install --yes build-essential git rustc cargo
-git clone https://github.com/pingcap/tokio
+git clone https://github.com/tokio-rs/tokio
 cd tokio && cargo test --all
 ```
 
